@@ -6,25 +6,25 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import de.ronasoft.springboot.mysql.domain.Product;
-import de.ronasoft.springboot.mysql.domain.ProductRepository;
+import de.ronasoft.springboot.mysql.domain.Auto;
+import de.ronasoft.springboot.mysql.domain.AutoRepository;
  
 @Service
 @Transactional
-public class ProductService {
+public class AutoService {
  
     @Autowired
-    private ProductRepository repo;
+    private AutoRepository repo;
      
-    public List<Product> listAll() {
+    public List<Auto> listAll() {
         return repo.findAll();
     }
      
-    public void save(Product product) {
+    public void save(Auto product) {
         repo.save(product);
     }
      
-    public Product get(long id) {
+    public Auto get(long id) {
         return repo.findById(id).get();
     }
      
